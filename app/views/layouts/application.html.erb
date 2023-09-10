@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
+    <script src="https://kit.fontawesome.com/ecb049080c.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,16 +13,22 @@
 
   <body>
     <div class="container">
-      <div>
         <%= render 'layouts/header' %>
-      </div>
-      <div>
+
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %> mt-3">
+            <%= message %>
+          </div>
+        <% end %>
+
         <%= yield %>
-      </div>
-      <div>
         <%= render 'layouts/footer' %>
-      </div>
-        
+      
+        <% if Rails.env.development? %>
+          <div class="alert alert-warning mt-1" role="alert">
+              <p class="fs-5 font-monospace fw-semibold mb-1"><%= debug(params) %></p> 
+          </div>
+        <% end %>
     </div>
   </body>
 </html>
