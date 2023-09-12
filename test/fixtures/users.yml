@@ -1,5 +1,5 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-michael:
+walt:
   name: Walter White
   email: ww@albuqerke.com
   password_digest: <%= User.digest('haizenberg') %>
