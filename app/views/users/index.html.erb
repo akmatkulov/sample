@@ -1,13 +1,18 @@
 <% provide(:title, "All Users") %>
 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">All Users</p>
 
-<%= raw pagy_bootstrap_nav @pagy %>
+
+<%= will_paginate %>
 <ul class="list-group list-group-light">
 <% @users.each do |user| %>
   <li class="list-group-item">
       <%= gravatar_for(user)%>
       <b><%= link_to user.name, user %></b>
+      <% if current_user.admin? && !current_user?(user) %>
+          <%= link_to "delete", user, data: { turbo_method: :delete } %>
+      <% end %>
   </li>
   <% end %>
 </ul>
+
 

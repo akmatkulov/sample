@@ -14,7 +14,9 @@ gem "jbuilder",        "2.11.5"
 gem "puma",            "5.6.4"
 gem "bootsnap",        "1.12.0", require: false
 gem "faker"
-gem "pagy"
+
+gem "will_paginate",           "3.3.1"
+gem "bootstrap-will_paginate", "1.0.0"
 
 group :development, :test do
   gem "sqlite3", "1.4.2"
@@ -40,3 +42,5 @@ group :test do
   gem "guard-minitest",           "2.4.6"
 end
 
+
+gem "hotwire-rails", "~> 0.1.3"

@@ -3,7 +3,7 @@ User.create!(name:  "Example User",
   email: "example@railstutorial.org",
   password:              "foobarqu",
   password_confirmation: "foobarqu",
-  )
+  admin: true)
 
 # Generate a bunch of additional users.
 99.times do |n|
